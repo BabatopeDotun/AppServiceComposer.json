@@ -95,7 +95,7 @@ echo Handling PHP deployment.
 IF EXIST "%DEPLOYMENT_SOURCE%\composer.lock" (
   pushd "%DEPLOYMENT_SOURCE%"
   php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-  php composer-setup.php --quiet --version 1.10.22
+  php composer-setup.php --quiet
   rm composer-setup.php
   php composer.phar install %COMPOSER_ARGS%
   IF !ERRORLEVEL! NEQ 0 goto error
